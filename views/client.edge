@@ -1,0 +1,37 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+              
+      <p>Clients:</p>
+
+      <table border = "1" cellpadding = "5" cellspacing = "5">
+        <tr >
+          
+          <th>Company Name</th>
+          <th>Company Address</th>
+        
+        </tr>
+
+      @each(client in clients)
+     
+        <tr>
+          <td> <a href="/client/{{client._id}}"> {{ client.companyname }} </a> </td>
+          <td> {{ client.companyaddress }} </td>
+        </tr>
+
+      @endeach
+    </table> 
+              
+     </div>
+</div>
+
+@endsection
+
+@section('scripts')
+
+
+@endsection

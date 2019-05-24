@@ -1,0 +1,35 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+              
+      <p>Workers:</p>
+
+      <table border = "1" cellpadding = "5" cellspacing = "5">
+        <tr >
+           <th>Worker ID</th>
+           <th>Name</th>
+        </tr>
+
+      @each(worker in workers)
+     
+        <tr>
+            <td> <a href="/worker/{{worker._id}}"> {{ worker.workerid }} </a> </td>  
+           <td> {{ worker.firstname }} {{worker.lastname}} </td>
+        </tr>
+
+      @endeach
+    </table> 
+              
+     </div>
+</div>
+
+@endsection
+
+@section('scripts')
+
+
+@endsection

@@ -1,0 +1,28 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div id="content-wrapper">
+
+        <div class="container-fluid">
+    
+    <table border = "1" cellpadding = "5" cellspacing = "5">
+                <tr >
+                    <th>Company Name</th>
+                    <th>Company Address</th>
+                    <th>Created By</th>
+                    <th>Created On</th>
+                 
+                </tr>
+                <tr>
+                    <td> {{ client.companyname }} </td>
+                    <td> {{ client.companyaddress }} </td>
+                    <td> {{ client.createdby.username }} </td>
+                    <td> {{ client.createdon }} </td>
+                </tr>
+    
+    
+    </div>
+    </div>
+  
+@endsection

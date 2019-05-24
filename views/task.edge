@@ -1,0 +1,44 @@
+@layout('layouts.app')
+
+@section('content')
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+              
+      <p>Tasks:</p>
+
+      <table border = "1" cellpadding = "5" cellspacing = "5">
+        <tr >
+          <th>Company Name</th>
+           <th>Site ID</th>
+           <th>Site Address</th>
+           <th>Created By</th>
+           <th>Created On</th>
+           
+        </tr>
+
+      @each(task in tasks)
+     
+        <tr>
+           <td> {{ task.companyname }} </td>
+           <td> {{ task.siteid }} </td>
+           <td> {{ task.siteaddress }} </td>
+           <td> {{ task.createdby }} </td>
+           <td> {{ task.createdon }} </td>
+          
+        </tr>
+
+      @endeach
+
+    </table> 
+              
+     </div>
+</div>
+
+@endsection
+
+@section('scripts')
+
+
+@endsection

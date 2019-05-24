@@ -1,0 +1,41 @@
+@layout('layouts.app')
+
+@section('styles')
+
+@endsection
+
+@section('content')
+
+
+  <div class="results p-3 d-none">
+    
+    <div class="mt-4">
+      <h3>User</h3>
+      <div class="result">
+        <pre><code id="user"></code></pre>
+      </div>
+    </div>
+
+  </div>
+
+
+@endsection
+
+
+@section('scripts')
+
+<script src="/public/jss/apiHelper"></script>
+<script>
+$(document).ready(api_helper.make_API_call('https://api.radar.io/v1/users'){
+        .then(response => {
+            res.json(response)
+ })
+        .catch(error => {
+            res.send(error)
+        })
+});
+
+
+</script>
+
+@endsection
