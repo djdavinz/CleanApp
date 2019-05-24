@@ -83,7 +83,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // MIDDLEWARE
 const auth = require("./middleware/auth");
-const redirectIfAuthenticated = require("./middleware/redirectIfAuthenticated")
+const redirectIfAuthenticated = require("./middleware/redirectifAuthenticated")
 
 // Router
 app.get('/', auth, dashController)
@@ -97,7 +97,7 @@ app.post("/users/login", redirectIfAuthenticated, loginUserController)
 
 
 // Store data from form
-app.post('/users/register', storeUserController)
+app.post('/users/register', redirectIfAuthenticated, storeUserController)
 app.post('/tasks/store', auth, storeTaskController)
 app.post('/workers/store', auth, storeWorkerController)
 app.post('/client/store', auth, storeClientController)
