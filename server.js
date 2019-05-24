@@ -22,7 +22,7 @@ const app = new express()
 var database, collection;
 
 app.listen(3000, () => {
-    mongoose.connect(process.env.DB_URI, { useNewUrlParser: true }, (error, client) => {
+    mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useCreateIndex: true }, (error, client) => {
         if (error) {
             throw error;
         }
